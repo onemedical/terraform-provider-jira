@@ -1,8 +1,11 @@
+<!-- markdownlint-disable MD014 -->
 # terraform-provider-jira
 
-[![Build & Tests](https://github.com/fourplusone/terraform-provider-jira/actions/workflows/go.yml/badge.svg)](https://github.com/fourplusone/terraform-provider-jira/actions/workflows/go.yml)
+[![Build & Tests](https://github.com/onemedical/terraform-provider-jira/actions/workflows/go.yml/badge.svg)](https://github.com/onemedical/terraform-provider-jira/actions/workflows/go.yml)
 
 Terraform Provider for managing JIRA. (__[View on registry.terraform.io](https://registry.terraform.io/providers/fourplusone/jira/latest)__)
+
+This is a detached fork of the [fourplusone/terraform-provider-jira](https://github.com/fourplusone/terraform-provider-jira) provider.
 
 ## Data Sources
 
@@ -31,14 +34,13 @@ This can be used to interlink infrastructure management with JIRA issues closely
 
 ![terraform-provider-jira demo](./images/terraform-provider-jira.gif)
 
-## Compatibility 
-
+## Compatibility
 
 | Version | Status       |  
 |---------|--------------|
 | Latest  | Tested in CI |
 | 7.x     | Untested     |
-| Cloud   | Untested     |   
+| Cloud   | Untested     |
 
 ## Install
 
@@ -69,7 +71,7 @@ export JIRA_USER=username
 export JIRA_PASSWORD=password
 ```
 
-It's also possible to use an API-Token from JIRA cloud. In this case, set 
+It's also possible to use an API-Token from JIRA cloud. In this case, set
 
 ```bash
 export JIRA_URL=https://yourinstance.atlassian.net
@@ -134,7 +136,7 @@ resource "jira_component" "example_component" {
   lead = "${jira_user.demo_user.name}"
 
   // (optional) assignee type. Can be one of project_default, component_lead, project_lead or unassigned.
-	assignee_type = "component_lead"
+  assignee_type = "component_lead"
 }
 
 resource "jira_issue" "another_example" {
@@ -209,10 +211,11 @@ resource "jira_project" "project_a" {
 
 // Create a Project with a shared configuration
 resource "jira_project" "project_shared" {
-	key = "SHARED"
-	name = "Project (with shared config)"
-	lead = "bot"
-	shared_configuration_project_id = "${jira_project.project_a.project_id}"
+  key  = "SHARED"
+  name = "Project (with shared config)"
+  lead = "bot"
+
+  shared_configuration_project_id = "${jira_project.project_a.project_id}"
 }
 
 
@@ -304,7 +307,7 @@ Run `terraform apply`
 terraform apply
 ```
 
-## Building 
+## Building
 
 If you wish to work on the provider, you'll first need [Go](http://www.golang.org) installed on your machine.
 
@@ -325,6 +328,7 @@ $ make build
 ```
 
 ## Testing
+
 Testing requires a JIRA instance. To set up a temporary, local JIRA instance you can use the [Docker Atlas](https://github.com/fourplusone/docker-atlas) container:
 
 ```sh
@@ -343,11 +347,12 @@ $ make test
 ```
 
 ## Rationale
+
 Working in Operations engineering organizations infrastructure is often driven by tickets. Why not track infrastructure using tickets but this time we will use code.
 This just showcases that you can pretty much Terraform anything!
-
 
 ## Credits
 
 - Anubhav Mishra (anubhavmishra)
 - Matthias Bartelmess (fourplusone)
+- Brian Menges (mengesb)
