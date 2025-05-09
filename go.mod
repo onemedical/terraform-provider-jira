@@ -8,6 +8,7 @@ require (
 	github.com/hashicorp/terraform-plugin-sdk/v2 v2.22.0
 	github.com/pkg/errors v0.9.1
 	github.com/trivago/tgo v1.0.7
+	golang.org/x/time v0.1.0
 )
 
 require (

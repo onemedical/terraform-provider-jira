@@ -2,18 +2,18 @@ name: Build & Tests
 
 on:
   push:
-    branches: [ master, ci-testing ]
+    branches: [ main, ci-testing ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - name: Set up Go
-      uses: actions/setup-go@v2
+      uses: actions/setup-go@v5
       with:
         go-version: 1.18
     - name: Build
@@ -30,10 +30,10 @@ jobs:
        - 2990:2990
    runs-on: ubuntu-latest
    steps:
-   - uses: actions/checkout@v2
+   - uses: actions/checkout@v4
 
    - name: Set up Go
-     uses: actions/setup-go@v2
+     uses: actions/setup-go@v5
      with:
        go-version: 1.18
 

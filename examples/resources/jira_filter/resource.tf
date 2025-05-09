@@ -1,20 +1,20 @@
 resource "jira_filter" "filter" {
   name = "Simple Filter"
-  jql = "project = PROJ"
+  jql  = "project = PROJ"
 
   // Optional Fields
   description = "All Issues in PROJ"
-  favourite = false
+  favourite   = false
 
   // All Members of project with ID 13102
   permissions {
-    type = "project"
+    type       = "project"
     project_id = "13102"
   }
 
   // All Members of Group "Team A"
   permissions {
-    type = "group"
+    type       = "group"
     group_name = "Team A"
   }
 

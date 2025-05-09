@@ -1,4 +1,4 @@
 resource "jira_project_category" "category" {
-  name = "Managed"
+  name        = "Managed"
   description = "Managed Projects"
 }

@@ -6,5 +6,8 @@
         "JIRA_USER": "admin",
         "JIRA_PASSWORD": "admin"
     },
-    "go.testFlags": ["-v"],
+    "go.testFlags": [
+        "-v"
+    ],
+    "makefile.configureOnOpen": true,
 }
