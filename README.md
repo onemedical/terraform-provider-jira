@@ -3,7 +3,7 @@
 
 [![Build & Tests](https://github.com/onemedical/terraform-provider-jira/actions/workflows/go.yml/badge.svg)](https://github.com/onemedical/terraform-provider-jira/actions/workflows/go.yml)
 
-Terraform Provider for managing JIRA. (__[View on registry.terraform.io](https://registry.terraform.io/providers/fourplusone/jira/latest)__)
+Terraform Provider for managing JIRA. (__[View on registry.terraform.io](https://app.terraform.io/app/onemedical/registry/providers/private/onemedical/jira/latest/overview)__)
 
 This is a detached fork of the [fourplusone/terraform-provider-jira](https://github.com/fourplusone/terraform-provider-jira) provider.
 
@@ -52,8 +52,8 @@ Copy this code into yout terraform configuration file (for example `main.tf`)
 terraform {
   required_providers {
     jira = {
-      source = "fourplusone/jira"
-      version = "0.1.16"
+      source = "app.terraform.io/onemedical/jira"
+      version = "~> 0.1"
     }
   }
 }
@@ -317,7 +317,7 @@ Clone repository to: `$HOME/development/terraform-providers/`
 
 ```sh
 $ mkdir -p $HOME/development/terraform-providers/; cd $HOME/development/terraform-providers/
-$ git clone git@github.com:fourplusone/terraform-provider-jira
+$ git clone git@github.com:onemedical/terraform-provider-jira
 ...
 ```
 
